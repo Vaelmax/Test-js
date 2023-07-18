@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background: silver;
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .card {
+        background: white;
+        padding: 10px;
+      }
+      header {
+        padding: 0 0 10px 0;
+        font-weight: 600;
+      }
+      footer {
+        padding: 10px 0 0 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <header>Naruto</header>
+      <img
+        src="https://static.wikia.nocookie.net/naruto/images/d/dd/Naruto_Uzumaki%21%21.png/revision/latest?cb=20210110160123&path-prefix=fr"
+      />
+      <main>C'est un manga</main>
+      <footer>Maxime Fogaras - 18/07/2023</footer>
+    </div>
+    <script>
+      const createAppend = (parent, tag) =>
+        parent.appendChild(document.createElement(tag));
+
+      const carte = createAppend(document.querySelector("body"), "div");
+      carte.classList.add("card");
+
+      const titre = createAppend(carte, "header");
+      titre.innerText = "Naruto";
+
+      const image = createAppend(carte, "img");
+      image.src =
+        "https://static.wikia.nocookie.net/naruto/images/d/dd/Naruto_Uzumaki%21%21.png/revision/latest?cb=20210110160123&path-prefix=fr";
+
+      const principale = createAppend(carte, "main");
+      principale.innerText = "C'est un manga";
+
+      const pied = createAppend(carte, "footer");
+      pied.innerText = "Maxime Fogaras - 18/07/2023";
+    </script>
+  </body>
+</html>
